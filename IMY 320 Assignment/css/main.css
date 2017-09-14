@@ -1,0 +1,145 @@
+/*GENERAL*/
+@font-face {
+    font-family:"256BYTES";
+    src: url("256BYTES.ttf") format('ttf');/* TTF file for CSS3 browsers */
+}
+
+body,html{
+	height: 100%;
+	margin: 0%;
+
+	 background-image: url("../images/fronPageBackground.jpg");
+
+    height: 100%; 
+
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+
+}
+
+
+/*NAVIGATION BAR*/
+.NavBar{
+	color : #848484;
+	font-size : 30px;
+	padding-left : 50px;
+	padding-top : 5px;
+	font-style : bold;
+}
+
+#NavHome{
+	color : #ffffff;
+}
+
+.NavItem{
+	width : 10%;
+	padding : 5px;
+	cursor : pointer;
+}
+
+/*HOME PAGE*/
+#Home{
+	position : absolute;
+	width : 100%;
+	height : 100%;
+	left : 50px;
+	top : 0;
+	left : 0;
+	color : #ffffff;
+	padding-left : 50px;
+	padding-top : 30px;
+	visibility : visible;
+	width : 600px;
+}
+
+.MainText{
+	color : #ffffff;
+}
+
+.MainImage{
+	padding : 50px;
+	visibility : false;
+}
+
+.WeThePeopleTextImage{
+	position : relative;
+	width : 450px;
+	height : 200px;
+}
+
+.Main{
+	position : relative;
+	padding-left : 50px;
+}
+
+/*ABOUT PAGE*/
+#About{
+	position : absolute;
+	width : 100%;
+	height : 100%;
+	left : 50px;
+	top : 0;
+	left : 0;
+	color : #ffffff;
+	padding-left : 50px;
+	visibility : hidden;
+	padding-top : 50px;
+	width : 600px;
+}
+
+/*REVIEWS PAGE*/
+#Reviews{
+	position : absolute;
+	width : 100%;
+	height : 100%;
+	left : 50px;
+	top : 0;
+	left : 0;
+	color : #ffffff;
+	padding-left : 50px;
+	visibility : hidden;
+}
+
+/*GALLERY PAGE*/
+#Gallery{
+	position : absolute;
+	width : 100%;
+	height : 100%;
+	left : 50px;
+	top : 0;
+	left : 0;
+	color : #ffffff;
+	padding-left : 50px;
+	visibility : hidden;
+}
+
+/*TEAM PAGE*/
+#Team{
+	position : absolute;
+	width : 100%;
+	height : 100%;
+	left : 50px;
+	top : 0;
+	left : 0;
+	color : #ffffff;
+	padding-left : 50px;
+	padding-top : 30px;
+	visibility : hidden;
+}
+
+.TeamMember{
+
+}
+
+.TeamMemberName{
+	font-weight : bold;
+	font-size : 20px;
+}
+
+
+
+
+
