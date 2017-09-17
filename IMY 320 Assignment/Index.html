@@ -5,8 +5,29 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<script src="javascript/jquery-3.2.1.min.js"></script>
 		<script src="javascript/transitions.js"></script>
+		<script type="text/javascript" src="gallery/three.js"></script>
 		<link rel="stylesheet" type="text/css" href="css/main.css" />
+		<link rel="stylesheet" type="text/css" href="css/animate.css">
+		<script type="text/javascript" src="javascript/jquery.lettering.js"></script>
+		<script type="text/javascript" src="javascript/jquery.textillate.js"></script>
 		<title>We The People</title>
+		<style type="text/css">
+		#world {
+			width: 700px;
+			height: 700px;
+			margin: 50px 20px;
+			position: relative;
+			float: left;
+		}
+		#american, #russian, #cuban {
+			width: 30%;
+			float: left;
+			padding: 50px;
+		}
+		.startNone {
+			display: none;
+		}
+	</style>
 	</head>
 	<body>	
 		<!-- TOP NAVIGATION MENU -->
@@ -14,7 +35,7 @@
 		<div class="NavBar">
 			<span id="NavHome" class="NavItem" onclick="showHome()">&#60 HOME &#62 </span> 
 			<span id="NavAbout" class="NavItem" onclick="showAbout()">&#60 ABOUT &#62 </span>
-			<span id="NavReviews" class="NavItem" onclick="showReviews()">&#60 REVIEWS &#62 </span>
+			<!-- <span id="NavReviews" class="NavItem" onclick="showReviews()">&#60 REVIEWS &#62 </span> -->
 			<span id="NavGallery" class="NavItem" onclick="showGallery()">&#60 GALLERY &#62 </span>
 			<span id="NavTeam" class="NavItem" onclick="showTeam()">&#60 TEAM &#62 </span>
 		</div>
@@ -25,79 +46,76 @@
 			<!-- HOME PAGE -->
 			<div id="Home">
 				<div class="MainImage">
-					<img class="WeThePeopleTextImage" src="images/Name.JPG"/>
-				</div>
-				<div class="MainText">
-					<p>The banana is an edible fruit – botanically a berry – produced by several kinds
-					of large herbaceous flowering plants in the genus Musa. In some countries, bananas
-					used for cooking may be called plantains, in contrast to dessert bananas. The fruit is
-					variable in size, color and firmness, but is usually elongated and curved, with soft
-					flesh rich in starch covered with a rind which may be green, yellow, red, purple, or 
-					brown when ripe. The fruits grow in clusters hanging from the top of the plant. Almost
-					all modern edible parthenocarpic (seedless) bananas come from two wild species – Musa 
-					acuminata and Musa balbisiana. The scientific names of most cultivated bananas are Musa
-					acuminata, Musa balbisiana, and Musa × paradisiaca for the hybrid Musa acuminata × 
-					M. balbisiana, depending on their genomic constitution. The old scientific name Musa
-					sapientum is no longer used.</p>
-					<p>Musa species are native to tropical Indomalaya and Australia, and are likely to have 
-					been first domesticated in Papua New Guinea. They are grown in 135 countries, 
-					primarily for their fruit, and to a lesser extent to make fiber, banana wine and banana
-					beer and as ornamental plants</p>
+					<h1 id="replace">We The <br>People</h1>
+					<h1 class="aniTxt">We The <br> People</h1>
 				</div>
 			</div>
 		
 			<!-- TEAM PAGE -->
 			<div id="Team">
+				<h1>The Team</h1>
 				<div class="TeamMember">
-					<p class="TeamMemberName">TEAM MEMBER 1</p>
-					<p>Eggplant (Solanum melongena), or aubergine, is a species of nightshade, grown for its edible fruit.<br>
-					Eggplant is the common name in North America, Australia and New Zealand, but British English uses the French <br>
-					word aubergine.[1] It is known in South Asia and South Africa as brinjal.</p>
+					<p class="TeamMemberName">Anneta Wamono</p>
+					<p>Project Leader</p>
 				</div>
 				<div class="TeamMember">
-					<p class="TeamMemberName">TEAM MEMBER 2</p>
-					<p>Eggplant (Solanum melongena), or aubergine, is a species of nightshade, grown for its edible fruit.<br>
-					Eggplant is the common name in North America, Australia and New Zealand, but British English uses the French <br>
-					word aubergine.[1] It is known in South Asia and South Africa as brinjal.</p>
+					<p class="TeamMemberName">Matthew Sankey</p>
+					<p>Lead Programmer</p>
 				</div>
 				<div class="TeamMember">
-					<p class="TeamMemberName">TEAM MEMBER 3</p>
-					<p>Eggplant (Solanum melongena), or aubergine, is a species of nightshade, grown for its edible fruit.<br>
-					Eggplant is the common name in North America, Australia and New Zealand, but British English uses the French <br>
-					word aubergine.[1] It is known in South Asia and South Africa as brinjal.</p>
+					<p class="TeamMemberName">Richard Lubbe</p>
+					<p>Game Designer + Sound Engineer</p>
 				</div>
 				<div class="TeamMember">
-					<p class="TeamMemberName">TEAM MEMBER 4</p>
-					<p>Eggplant (Solanum melongena), or aubergine, is a species of nightshade, grown for its edible fruit.<br>
-					Eggplant is the common name in North America, Australia and New Zealand, but British English uses the French <br>
-					word aubergine.[1] It is known in South Asia and South Africa as brinjal.</p>
+					<p class="TeamMemberName">David Behr</p>
+					<p>3D Modeller</p>
 				</div>
-				<div class="TeamMember">
+				<!-- <div class="TeamMember">
 					<p class="TeamMemberName">TEAM MEMBER 5</p>
 					<p>Eggplant (Solanum melongena), or aubergine, is a species of nightshade, grown for its edible fruit.<br>
 					Eggplant is the common name in North America, Australia and New Zealand, but British English uses the French <br>
 					word aubergine.[1] It is known in South Asia and South Africa as brinjal.</p>
-				</div>
+				</div> -->
 			</div>
 			
 			<!-- ABOUT PAGE -->
 			<div id="About">
-				<p>The donkey or ass (Equus africanus asinus)[1][2] is a domesticated member of the horse family, Equidae. The wild ancestor 
-				of the donkey is the African wild ass, E. africanus. The donkey has been used as a working animal for at least 5000 years. 
-				There are more than 40 million donkeys in the world, mostly in underdeveloped countries, where they are used principally as 
-				draught or pack animals. Working donkeys are often associated with those living at or below subsistence levels. Small numbers
-				of donkeys are kept for breeding or as pets in developed countries.</p>
-				<p>A male donkey or ass is called a jack, a female a jenny or jennet; a young donkey is a foal.[5] Jack donkeys are often used to 
-				mate with female horses to produce mules; the biological "reciprocal" of a mule, from a stallion and jenny as its parents instead, 
-				is called a hinny.</p>
-				<p>Asses were first domesticated around 3000 BC, probably in Egypt or Mesopotamia,[6][7] and have spread around the world. They 
-				continue to fill important roles in many places today. While domesticated species are increasing in numbers, the African wild ass is 
-				an endangered species. As beasts of burden and companions, asses and donkeys have worked together with humans for millennia.</p>
+				<h2><b>We The People</b> is a 3D platform game designed to test your espionage skills. Set during the peak of the cold war, the game tells the story of a small band of hackers and defact spies from all over world who have one singular belief - that nuclear war will be the end of human kind. The player will assume the role of one of the agents and will infiltrate a new nuclear facility at each level to try and disarm the missiles.</h2>
 			</div>
 			
 			<!-- GALLERY PAGE -->
 			<div id="Gallery">
-				GALLERY
+				<div id="american">
+					<h1>Agent #3512</h1>
+					<h2>Country of origin:</h2>
+					<p>America</p>
+					<h2>Recruitment:</h2>
+					<p>After spending years fighting in the civil rights movement group, the Black Panthers, Agent #3512 sought out our group as a means to bring down the ever impending threat of nuclear warfare rhetoric emerging from her home country. Skilled in espionage and hand to hand combat, Agent #3512 is one of our best and most loyal recruits.</p>
+					<h2>Mission:</h2>
+					<p>Infiltrate the nuclear facility located in Oak Ridge, Tennessee</p>
+				</div>
+				<div id="russian" class="startNone">
+					<h1>Agent #1122</h1>
+					<h2>Country of origin:</h2>
+					<p>Soviet Union</p>
+					<h2>Recruitment:</h2>
+					<p>Agent #1122 is a defected agent of the KGB. All those years surviving the extremist behaviour of the KGB forced Agent #1122 to find refuge here in our establishment. He brings the best to the table when it comes to technological hacking and intelligence gathering.</p>
+					<h2>Mission:</h2>
+					<p>Infiltrate the Semipalatinsk Test Site</p>
+				</div>
+				<div id="cuban" class="startNone">
+					<h1>Agent #8765</h1>
+					<h2>Country of origin:</h2>
+					<p>Cuba</p>
+					<h2>Recruitment:</h2>
+					<p>Forced to leave Cuba during the Cuban Revolution, Agent #8765 received training in America under the CIA. Unhappy about the conditions and experimentation he found there, he sought after a more promising future with us here. He excels at long range shooting and intellegence gathering.</p>
+					<h2>Mission:</h2>
+					<p>Investigate missile sitings at San Cristóbal, Pinar del Río Province.</p>
+				</div>
+				<div id="world">
+					<button id="leftBtn" onclick="changeModel()"><img src="images/left-arrow.png"></button>
+					<button id="rightBtn" onclick="changeModel()"><img src="images/right-arrow.png"></button>
+				</div>
 			</div>
 			
 			<!-- REVIEWS PAGE -->
@@ -107,4 +125,5 @@
 		</div>
 
 	</body>
+	<script type="text/javascript" src="gallery/gallery.js"></script>
 </html>
