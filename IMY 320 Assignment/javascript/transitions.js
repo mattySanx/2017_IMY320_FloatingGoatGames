@@ -2,11 +2,13 @@
 
 $(document).ready(function() {
 	console.log("hey");
+	$('#replace').hide();
+	$('.aniTxt').textillate({out: {effect: 'fadeOutDown', synch: true}});
 
 
-$("#Home").click(function(){
+$("#NavHome").click(function(){
 	console.log("hey");
-        
+		$('#replace').show();
          /* $("body").css("background-image", "url(fronPageBackgroundOne.jpg)");
         	setTimeout(function(){ $("body").css("background-image", "url(fronPageBackground.jpg)"); },5000);*/
 
@@ -23,9 +25,11 @@ $("#Home").click(function(){
 });
 
 
-$("#About").click(function(){
-   
-
+$("#NavAbout").click(function(){
+   		if($('.aniTxt')) {
+			$('.aniTxt').textillate('out');
+			$('.aniTxt').removeClass('aniTxt');
+		}
          $('body').fadeOut('slow', function () {
 
                 $('body').css({ 'background-image': 'url(images/missile2.jpg)' });
@@ -37,10 +41,13 @@ $("#About").click(function(){
 });
 
 
-$("#Team").click(function(){
+$("#NavTeam").click(function(){
 	console.log("hey");
         
-     
+     	if($('.aniTxt')) {
+			$('.aniTxt').textillate('out');
+			$('.aniTxt').removeClass('aniTxt');
+		}
 
         	/**$("body").animate({ "background-image", "url(fronPageBackground.jpg)", 2000);**/
 
@@ -53,11 +60,14 @@ $("#Team").click(function(){
             });
 });
 
-$("#Reviews").click(function(){
+$("#NavReviews").click(function(){
 	console.log("hey");
         
 
-
+		if($('.aniTxt')) {
+			$('.aniTxt').textillate('out');
+			$('.aniTxt').removeClass('aniTxt');
+		}
         	 
 
 
@@ -70,15 +80,18 @@ $("#Reviews").click(function(){
 });
 
 
-$("#Gallery").click(function(){
+$("#NavGallery").click(function(){
 	console.log("hey");
-        
+        if($('.aniTxt')) {
+			$('.aniTxt').textillate('out');
+			$('.aniTxt').removeClass('aniTxt');
+		}
        
-
+		$('.aniTxt').textillate('out');
 
          $('body').fadeOut('slow', function () {
 
-                $('body').css({ 'background-image': 'url(images/koreanCold2.jpg)' });
+                $('body').css({ 'background-image': 'url(images/koreanCOld2.jpg)' });
 
                 $('body').fadeIn(3000);
             });

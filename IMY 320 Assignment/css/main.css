@@ -1,14 +1,31 @@
 /*GENERAL*/
 @font-face {
-    font-family:"256BYTES";
-    src: url("256BYTES.ttf") format('ttf');/* TTF file for CSS3 browsers */
+    font-family: '256_bytesregular';
+    src: url('../256bytes-webfont.woff2') format('woff2'),
+         url('../256bytes-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'velvendamegablack';
+    src: url('../velvenda_chill.ttf') format('truetype'),
+    	 url('../velvenda_megablack-webfont.woff2') format('woff2'),
+         url('../velvenda_megablack-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
 }
 
 body,html{
 	height: 100%;
 	margin: 0%;
 
-	 background-image: url("../images/fronPageBackground.jpg");
+	background-image: url("../images/fronPageBackground.jpg");
 
     height: 100%; 
 
@@ -17,11 +34,21 @@ body,html{
     background-repeat: no-repeat;
     background-size: cover;
 
-
+    font-family: "256_bytesregular", serif;
 }
 
+h1 {
+	font-family: "velvendamegablack", serif;
+	color: white;
+}
 
 /*NAVIGATION BAR*/
+.MainImage {
+	font-family: "velvendamegablack", serif;
+	color: white;
+	font-size: 80px;
+}
+
 .NavBar{
 	color : #848484;
 	font-size : 30px;
@@ -61,7 +88,7 @@ body,html{
 
 .MainImage{
 	padding : 50px;
-	visibility : false;
+	/*visibility : hidden;*/
 }
 
 .WeThePeopleTextImage{
@@ -139,7 +166,25 @@ body,html{
 	font-size : 20px;
 }
 
+#world button {
+	position: absolute;
+	bottom: 0;
+	width: 50%;
+	background-color: transparent;
+}
 
+#world>button img {
+	width: 25%;
+}
 
+#world button:hover {
+	background-color: black;
+}
 
+#leftBtn {
+	left: 0;
+}
 
+#rightBtn {
+	right: 0;
+}
