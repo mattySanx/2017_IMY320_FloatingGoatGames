@@ -1,8 +1,8 @@
 /*GENERAL*/
 @font-face {
     font-family: '256_bytesregular';
-    src: url('../256bytes-webfont.woff2') format('woff2'),
-         url('../256bytes-webfont.woff') format('woff');
+    src: url('../StTransmission-800-ExtraBold.otf') format('opentype'),
+         url('../StTransmission-800-ExtraBold.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 
