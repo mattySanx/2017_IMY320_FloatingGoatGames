@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<script src="javascript/jquery-3.2.1.min.js"></script>
-		<script src="javascript/transitions.js"></script>
-		<script type="text/javascript" src="gallery/three.js"></script>
-		<link rel="stylesheet" type="text/css" href="css/main.css" />
-		<link rel="stylesheet" type="text/css" href="css/animate.css">
-		<script type="text/javascript" src="javascript/jquery.lettering.js"></script>
-		<script type="text/javascript" src="javascript/jquery.textillate.js"></script>
-		<title>We The People</title>
-		<style type="text/css">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="javascript/jquery-3.2.1.min.js"></script>
+	<script src="javascript/transitions.js"></script>
+	<script type="text/javascript" src="gallery/three.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/main.css" />
+	<link rel="stylesheet" type="text/css" href="css/animate.css">
+	<script type="text/javascript" src="javascript/jquery.lettering.js"></script>
+	<script type="text/javascript" src="javascript/jquery.textillate.js"></script>
+	<title>We The People</title>
+	<style type="text/css">
 		#world {
 			width: 700px;
 			height: 700px;
@@ -19,111 +20,120 @@
 			position: relative;
 			float: left;
 		}
-		#american, #russian, #cuban {
+
+		#american,
+		#russian,
+		#cuban {
 			width: 30%;
 			float: left;
 			padding: 50px;
 		}
+
 		.startNone {
 			display: none;
 		}
 	</style>
-	</head>
-	<body>	
-		<!-- TOP NAVIGATION MENU -->
+</head>
 
-		<div class="NavBar">
-			<span id="NavHome" class="NavItem" onclick="showHome()">&#60 HOME &#62 </span> 
-			<span id="NavAbout" class="NavItem" onclick="showAbout()">&#60 ABOUT &#62 </span>
-			<!-- <span id="NavReviews" class="NavItem" onclick="showReviews()">&#60 REVIEWS &#62 </span> -->
-			<span id="NavGallery" class="NavItem" onclick="showGallery()">&#60 GALLERY &#62 </span>
-			<span id="NavTeam" class="NavItem" onclick="showTeam()">&#60 TEAM &#62 </span>
-		</div>
-		
-		<!-- MAIN CONTENT CONTAINER -->
-		<div class="Main">
-		
-			<!-- HOME PAGE -->
-			<div id="Home">
-				<div class="MainImage">
-					<h1 id="replace">We The <br>People</h1>
-					<h1 class="aniTxt">We The <br> People</h1>
-				</div>
+<body>
+	<!-- TOP NAVIGATION MENU -->
+
+	<div class="NavBar">
+		<span id="NavHome" class="NavItem" onclick="showHome()">&#60 HOME &#62 </span>
+		<span id="NavAbout" class="NavItem" onclick="showAbout()">&#60 ABOUT &#62 </span>
+		<!-- <span id="NavReviews" class="NavItem" onclick="showReviews()">&#60 REVIEWS &#62 </span> -->
+		<span id="NavGallery" class="NavItem" onclick="showGallery()">&#60 GALLERY &#62 </span>
+		<span id="NavTeam" class="NavItem" onclick="showTeam()">&#60 TEAM &#62 </span>
+	</div>
+
+	<!-- MAIN CONTENT CONTAINER -->
+	<div class="Main">
+
+		<!-- HOME PAGE -->
+		<div id="Home">
+			<div class="MainImage">
+				<h1 id="replace">We The <br>People</h1>
+				<h1 class="aniTxt">We The <br> People</h1>
 			</div>
-		
-			<!-- TEAM PAGE -->
-			<div id="Team">
-				<h1>The Team</h1>
-				<div class="TeamMember">
-					<p class="TeamMemberName">Anneta Wamono</p>
-					<p>Project Leader</p>
-				</div>
-				<div class="TeamMember">
-					<p class="TeamMemberName">Matthew Sankey</p>
-					<p>Lead Programmer</p>
-				</div>
-				<div class="TeamMember">
-					<p class="TeamMemberName">Richard Lubbe</p>
-					<p>Game Designer + Sound Engineer</p>
-				</div>
-				<div class="TeamMember">
-					<p class="TeamMemberName">David Behr</p>
-					<p>3D Modeller</p>
-				</div>
-				<!-- <div class="TeamMember">
+		</div>
+
+		<!-- TEAM PAGE -->
+		<div id="Team">
+			<h1>The Team</h1>
+			<div class="TeamMember">
+				<p class="TeamMemberName">Anneta Wamono</p>
+				<p>Project Leader</p>
+			</div>
+			<div class="TeamMember">
+				<p class="TeamMemberName">Matthew Sankey</p>
+				<p>Lead Programmer</p>
+			</div>
+			<div class="TeamMember">
+				<p class="TeamMemberName">Richard Lubbe</p>
+				<p>Game Designer + Sound Engineer</p>
+			</div>
+			<div class="TeamMember">
+				<p class="TeamMemberName">David Behr</p>
+				<p>3D Modeller</p>
+			</div>
+			<!-- <div class="TeamMember">
 					<p class="TeamMemberName">TEAM MEMBER 5</p>
 					<p>Eggplant (Solanum melongena), or aubergine, is a species of nightshade, grown for its edible fruit.<br>
 					Eggplant is the common name in North America, Australia and New Zealand, but British English uses the French <br>
 					word aubergine.[1] It is known in South Asia and South Africa as brinjal.</p>
 				</div> -->
+		</div>
+
+		<!-- ABOUT PAGE -->
+		<div id="About">
+			<h2><b>We The People</b> is a 3D platform game designed to test your espionage skills. Set during the peak of the cold war, the game tells the story of a small band of hackers and defact spies from all over world who have one singular belief - that nuclear war will be the end of human kind. The player will assume the role of one of the agents and will infiltrate a new nuclear facility at each level to try and disarm the missiles.</h2>
+		</div>
+
+		<!-- GALLERY PAGE -->
+		<div id="Gallery">
+			<div id="american">
+				<h1>Agent #3512</h1>
+				<h2>Country of origin:</h2>
+				<p>America</p>
+				<h2>Recruitment:</h2>
+				<p>After spending years fighting in the civil rights movement group, the Black Panthers, Agent #3512 sought out our group as a means to bring down the ever impending threat of nuclear warfare rhetoric emerging from her home country. Skilled in espionage
+					and hand to hand combat, Agent #3512 is one of our best and most loyal recruits.</p>
+				<h2>Mission:</h2>
+				<p>Infiltrate the nuclear facility located in Oak Ridge, Tennessee</p>
 			</div>
-			
-			<!-- ABOUT PAGE -->
-			<div id="About">
-				<h2><b>We The People</b> is a 3D platform game designed to test your espionage skills. Set during the peak of the cold war, the game tells the story of a small band of hackers and defact spies from all over world who have one singular belief - that nuclear war will be the end of human kind. The player will assume the role of one of the agents and will infiltrate a new nuclear facility at each level to try and disarm the missiles.</h2>
+			<div id="russian" class="startNone">
+				<h1>Agent #1122</h1>
+				<h2>Country of origin:</h2>
+				<p>Soviet Union</p>
+				<h2>Recruitment:</h2>
+				<p>Agent #1122 is a defected agent of the KGB. All those years surviving the extremist behaviour of the KGB forced Agent #1122 to find refuge here in our establishment. He brings the best to the table when it comes to technological hacking and intelligence
+					gathering.</p>
+				<h2>Mission:</h2>
+				<p>Infiltrate the Semipalatinsk Test Site</p>
 			</div>
-			
-			<!-- GALLERY PAGE -->
-			<div id="Gallery">
-				<div id="american">
-					<h1>Agent #3512</h1>
-					<h2>Country of origin:</h2>
-					<p>America</p>
-					<h2>Recruitment:</h2>
-					<p>After spending years fighting in the civil rights movement group, the Black Panthers, Agent #3512 sought out our group as a means to bring down the ever impending threat of nuclear warfare rhetoric emerging from her home country. Skilled in espionage and hand to hand combat, Agent #3512 is one of our best and most loyal recruits.</p>
-					<h2>Mission:</h2>
-					<p>Infiltrate the nuclear facility located in Oak Ridge, Tennessee</p>
-				</div>
-				<div id="russian" class="startNone">
-					<h1>Agent #1122</h1>
-					<h2>Country of origin:</h2>
-					<p>Soviet Union</p>
-					<h2>Recruitment:</h2>
-					<p>Agent #1122 is a defected agent of the KGB. All those years surviving the extremist behaviour of the KGB forced Agent #1122 to find refuge here in our establishment. He brings the best to the table when it comes to technological hacking and intelligence gathering.</p>
-					<h2>Mission:</h2>
-					<p>Infiltrate the Semipalatinsk Test Site</p>
-				</div>
-				<div id="cuban" class="startNone">
-					<h1>Agent #8765</h1>
-					<h2>Country of origin:</h2>
-					<p>Cuba</p>
-					<h2>Recruitment:</h2>
-					<p>Forced to leave Cuba during the Cuban Revolution, Agent #8765 received training in America under the CIA. Unhappy about the conditions and experimentation he found there, he sought after a more promising future with us here. He excels at long range shooting and intellegence gathering.</p>
-					<h2>Mission:</h2>
-					<p>Investigate missile sitings at San Cristóbal, Pinar del Río Province.</p>
-				</div>
-				<div id="world">
-					<button id="leftBtn" onclick="changeModel()"><img src="images/left-arrow.png"></button>
-					<button id="rightBtn" onclick="changeModel()"><img src="images/right-arrow.png"></button>
-				</div>
+			<div id="cuban" class="startNone">
+				<h1>Agent #8765</h1>
+				<h2>Country of origin:</h2>
+				<p>Cuba</p>
+				<h2>Recruitment:</h2>
+				<p>Forced to leave Cuba during the Cuban Revolution, Agent #8765 received training in America under the CIA. Unhappy about the conditions and experimentation he found there, he sought after a more promising future with us here. He excels at long range
+					shooting and intellegence gathering.</p>
+				<h2>Mission:</h2>
+				<p>Investigate missile sitings at San Cristóbal, Pinar del Río Province.</p>
 			</div>
-			
-			<!-- REVIEWS PAGE -->
-			<div id="Reviews">
-				REVIEWS
+			<div id="world">
+				<button id="leftBtn" onclick="changeModel('left')"><img src="images/left-arrow.png"></button>
+				<button id="rightBtn" onclick="changeModel('right')"><img src="images/right-arrow.png"></button>
 			</div>
 		</div>
 
-	</body>
-	<script type="text/javascript" src="gallery/gallery.js"></script>
+		<!-- REVIEWS PAGE -->
+		<div id="Reviews">
+			REVIEWS
+		</div>
+	</div>
+
+</body>
+<script type="text/javascript" src="gallery/gallery.js"></script>
+
 </html>
