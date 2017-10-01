@@ -178,25 +178,27 @@ function initLights() {
 function removeEntity() {
   scene.remove(mesh);
 }
-
+// TODO: fix the weird thing here
 function changeModel(direction) {
-  console.log(direction);
+  console.log(leftBtn);
   if (direction == "left") {
     if (select < 3) {
-			//rightBtn.style.visibility = true;
+			rightBtn.disabled  = false;
+			leftBtn.disabled  = false;
       select++;
     } else {
-			leftBtn.style.visibility = false;
+			leftBtn.disabled  = true;
 		}
     //console.log("left: " + select);
   }
 
   if (direction == "right") {
     if (select > 1) {
-			//leftBtn.style.visibility = true;
+			rightBtn.disabled  = false;
+			leftBtn.disabled  = false;
       select--;
     } else {
-    	rightBtn.style.visibility = false;
+    	rightBtn.disabled  = true;
     }
     // console.log("right: " + select);
   }
