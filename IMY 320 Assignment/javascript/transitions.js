@@ -1,4 +1,6 @@
 $(function(){
+
+  // page transitions
   $("#NavHome").click(function(){
     $("#transition-block").animate({
       height: "toggle"
@@ -30,9 +32,16 @@ $(function(){
     $("#transition-block").animate({
       height: "toggle"
     }, 500, function(){
-      showTeam()
+      showTeam();
       $("#transition-block").animate({height: "toggle"}, 500);
     });
+  });
+
+  // easter eggs
+  $(".egg").mouseenter(function(){
+    $("body").css('background-image', 'url(../images/fronPageBackgroundOne.jpg)');
+  }).mouseleave(function(){
+    $("body").css('background-image', 'url(../images/fronPageBackground.jpg)');
   });
 });
 
@@ -40,14 +49,14 @@ var unselectedColor = '#848484';
 
 function showTeam() {
   document.body.style.backgroundImage = "url('images/fronPageBackground.jpg')";
-  document.getElementById('Team').style.visibility = 'visible';
-  document.getElementById('NavTeam').style.color = '#ffffff';
   document.getElementById('Home').style.visibility = 'hidden';
   document.getElementById('NavHome').style.color = unselectedColor;
   document.getElementById('Gallery').style.visibility = 'hidden';
   document.getElementById('NavGallery').style.color = unselectedColor;
   document.getElementById('About').style.visibility = 'hidden';
   document.getElementById('NavAbout').style.color = unselectedColor;
+  document.getElementById('Team').style.visibility = 'visible';
+  document.getElementById('NavTeam').style.color = '#ffffff';
   document.getElementById('Reviews').style.visibility = 'hidden';
 }
 
