@@ -48,8 +48,7 @@ h1 {
   color: #848484;
   font-size: 30px;
   padding-left: 50px;
-  padding-top: 5px;
-  font-style: bold;
+  padding-top: 50px;
 }
 
 #NavHome {
@@ -59,7 +58,15 @@ h1 {
 .NavItem {
   width: 10%;
   padding: 5px;
+  padding-top: 6px;
   cursor: pointer;
+  -webkit-transition: font-size 1s, padding-top 1s;
+  transition: font-size 1s, padding-top 1s;
+}
+
+.NavItem:hover {
+  font-size: 36px;
+  padding-top: 0;
 }
 
 /*HOME PAGE*/
@@ -162,6 +169,16 @@ h1 {
 .TeamMemberName {
   font-weight: bold;
   font-size: 20px;
+}
+
+/*Transition block*/
+#transition-block {
+  background-color: black;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  display: none;
 }
 
 #world button {

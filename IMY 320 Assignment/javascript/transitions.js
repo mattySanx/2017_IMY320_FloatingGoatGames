@@ -1,116 +1,40 @@
-$(document).ready(function() {
-  console.log("hey");
-  $('#replace').hide();
-  $('.aniTxt').textillate({
-    out: {
-      effect: 'fadeOutDown',
-      synch: true
-    }
-  });
-
-
-  $("#NavHome").click(function() {
-    console.log("hey");
-    $('#replace').show();
-    /* $("body").css("background-image", "url(fronPageBackgroundOne.jpg)");
-        	setTimeout(function(){ $("body").css("background-image", "url(fronPageBackground.jpg)"); },5000);*/
-
-    /**$("body").animate({ "background-image", "url(fronPageBackground.jpg)", 2000);**/
-
-
-    $('body').fadeOut('slow', function() {
-
-      $('body').css({
-        'background-image': 'url(images/fronPageBackgroundOne.jpg)'
-      });
-
-      $('body').fadeIn(3000);
-    });
-
-  });
-
-
-  $("#NavAbout").click(function() {
-    if ($('.aniTxt')) {
-      $('.aniTxt').textillate('out');
-      $('.aniTxt').removeClass('aniTxt');
-    }
-    $('body').fadeOut('slow', function() {
-
-      $('body').css({
-        'background-image': 'url(images/missile2.jpg)'
-      });
-
-      $('body').fadeIn(3000);
-    });
-
-    /**$("body").animate({ "background-image", "url(fronPageBackground.jpg)", 2000);**/
-  });
-
-
-  $("#NavTeam").click(function() {
-    console.log("hey");
-
-    if ($('.aniTxt')) {
-      $('.aniTxt').textillate('out');
-      $('.aniTxt').removeClass('aniTxt');
-    }
-
-    /**$("body").animate({ "background-image", "url(fronPageBackground.jpg)", 2000);**/
-
-
-    $('body').fadeOut('slow', function() {
-
-      $('body').css({
-        'background-image': 'url(images/smallBoy2.jpg)'
-      });
-
-      $('body').fadeIn(3000);
+$(function(){
+  $("#NavHome").click(function(){
+    $("#transition-block").animate({
+      height: "toggle"
+    }, 500, function(){
+      showHome();
+      $("#transition-block").animate({height: "toggle"}, 500);
     });
   });
 
-  $("#NavReviews").click(function() {
-    console.log("hey");
-
-
-    if ($('.aniTxt')) {
-      $('.aniTxt').textillate('out');
-      $('.aniTxt').removeClass('aniTxt');
-    }
-
-
-
-    $('body').fadeOut('slow', function() {
-
-      $('body').css({
-        'background-image': 'url(images/micro2.jpg)'
-      });
-
-      $('body').fadeIn(3000);
+  $("#NavAbout").click(function(){
+    $("#transition-block").animate({
+      height: "toggle"
+    }, 500, function(){
+      showAbout();
+      $("#transition-block").animate({height: "toggle"}, 500);
     });
   });
 
+  $("#NavGallery").click(function(){
+    $("#transition-block").animate({
+      height: "toggle"
+    }, 500, function(){
+      showGallery();
+      $("#transition-block").animate({height: "toggle"}, 500);
+    });
+  });
 
-  $("#NavGallery").click(function() {
-    console.log("hey");
-    if ($('.aniTxt')) {
-      $('.aniTxt').textillate('out');
-      $('.aniTxt').removeClass('aniTxt');
-    }
-
-    $('.aniTxt').textillate('out');
-
-    $('body').fadeOut('slow', function() {
-
-      $('body').css({
-        'background-image': 'url(images/koreanCOld2.jpg)'
-      });
-
-      $('body').fadeIn(3000);
+  $("#NavTeam").click(function(){
+    $("#transition-block").animate({
+      height: "toggle"
+    }, 500, function(){
+      showTeam()
+      $("#transition-block").animate({height: "toggle"}, 500);
     });
   });
 });
-
 
 var unselectedColor = '#848484';
 
@@ -125,7 +49,6 @@ function showTeam() {
   document.getElementById('About').style.visibility = 'hidden';
   document.getElementById('NavAbout').style.color = unselectedColor;
   document.getElementById('Reviews').style.visibility = 'hidden';
-  document.getElementById('NavReviews').style.color = unselectedColor;
 }
 
 function showHome() {
@@ -139,7 +62,6 @@ function showHome() {
   document.getElementById('About').style.visibility = 'hidden';
   document.getElementById('NavAbout').style.color = unselectedColor;
   document.getElementById('Reviews').style.visibility = 'hidden';
-  document.getElementById('NavReviews').style.color = unselectedColor;
 }
 
 function showAbout() {
@@ -153,7 +75,6 @@ function showAbout() {
   document.getElementById('About').style.visibility = 'visible';
   document.getElementById('NavAbout').style.color = '#ffffff';
   document.getElementById('Reviews').style.visibility = 'hidden';
-  document.getElementById('NavReviews').style.color = unselectedColor;
 }
 
 function showGallery() {
@@ -167,7 +88,6 @@ function showGallery() {
   document.getElementById('About').style.visibility = 'hidden';
   document.getElementById('NavAbout').style.color = unselectedColor;
   document.getElementById('Reviews').style.visibility = 'hidden';
-  document.getElementById('NavReviews').style.color = unselectedColor;
 }
 
 function showReviews() {
@@ -181,5 +101,4 @@ function showReviews() {
   document.getElementById('About').style.visibility = 'hidden';
   document.getElementById('NavAbout').style.color = unselectedColor;
   document.getElementById('Reviews').style.visibility = 'visible';
-  document.getElementById('NavReviews').style.color = '#ffffff';
 }
