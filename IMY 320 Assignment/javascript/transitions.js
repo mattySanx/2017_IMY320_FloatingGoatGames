@@ -50,12 +50,13 @@ $(function(){
 
 var arrayFonts = ["serif", "san-serif", "256_bytesregular"];
 
+// TODO: fix this
 function render2() {
-  requestAnimationFrame(render2);
   $(".egg>span").each(function(){
     console.log("render2");
     $(this).css('font-family', arrayFonts[Math.floor(Math.random() * (3 - 0 + 1)) + 0]);
   });
+  t = setTimeout(function(){ render2() }, 500);
 }
 
 var unselectedColor = '#848484';
