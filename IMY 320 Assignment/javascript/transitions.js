@@ -1,6 +1,6 @@
 $(function(){
 
-  // page transitions
+  //********** page transitions ***********
   $("#NavHome").click(function(){
     $("#transition-block").animate({
       height: "toggle"
@@ -37,7 +37,7 @@ $(function(){
     });
   });
 
-  // easter eggs
+  //************** easter eggs ****************
   $(".egg").mouseenter(function(){
     $("body").css('background-image', 'url(../images/fronPageBackgroundOne.jpg)');
   }).mouseleave(function(){
@@ -56,8 +56,20 @@ $(function(){
     $(".egg>span").css('fontFamily', arrayFonts[c % arrayFonts.length]);
     }, 500);
 
-    //team page
-    $(".TeamMemberName").hover(function(){
+    //***************** team page *********************
+    $("#anneta").hover(function(){
+      $("body").css('background-image', 'url(../images/imy320pic1.jpg)');
+      $(this).text(function(i, origText){
+        return "<" + origText + ">";
+        });
+    }, function(){
+      $("body").css('background-image', 'url(../images/koreanCOld.jpg)');
+      $(this).text(function(i, origText){
+        return origText.substring(1, origText.length-1);
+      });
+    });
+
+    $("#matthew").hover(function(){
       $(this).text(function(i, origText){
         return "<" + origText + ">";
         });
@@ -65,6 +77,30 @@ $(function(){
       $(this).text(function(i, origText){
         return origText.substring(1, origText.length-1);
       });
+    });
+
+    $("#rish").hover(function(){
+      $(this).text(function(i, origText){
+        return "<" + origText + ">";
+        });
+    }, function(){
+      $(this).text(function(i, origText){
+        return origText.substring(1, origText.length-1);
+      });
+    });
+
+    $("#dave").hover(function(){
+      $(this).text(function(i, origText){
+        return "<" + origText + ">";
+        });
+    }, function(){
+      $(this).text(function(i, origText){
+        return origText.substring(1, origText.length-1);
+      });
+    });
+
+    $("#anneta").click(function(){
+          $("body").css('background-image', 'url(../images/imy320pic1.jpg)');
     });
 });
 
@@ -90,7 +126,7 @@ var unselectedColor = '#848484';
 // var teamNav = document.getElementById('NavTeam');
 
 function showTeam() {
-  document.body.style.backgroundImage = "url('images/fronPageBackground.jpg')";
+  document.body.style.backgroundImage = "url('images/koreanCOld.jpg')";
   document.getElementById('Home').style.visibility = 'hidden';
   document.getElementById('NavHome').style.color = unselectedColor;
   // document.getElementById('NavHome').style.fontSize = '30px';
@@ -124,7 +160,7 @@ function showHome() {
 }
 
 function showAbout() {
-  document.body.style.backgroundImage = "url('images/fronPageBackground.jpg')";
+  document.body.style.backgroundImage = "url('images/missile.jpg')";
   document.getElementById('Team').style.visibility = 'hidden';
   document.getElementById('NavTeam').style.color = unselectedColor;
   // document.getElementById('NavTeam').style.fontSize = '30px';
@@ -141,7 +177,7 @@ function showAbout() {
 }
 
 function showGallery() {
-  document.body.style.backgroundImage = "url('images/fronPageBackground.jpg')";
+  document.body.style.backgroundImage = "url('images/smallBoy.jpg')";
   document.getElementById('Team').style.visibility = 'hidden';
   document.getElementById('NavTeam').style.color = unselectedColor;
   // document.getElementById('NavTeam').style.fontSize = '30px';

@@ -168,6 +168,7 @@ h1 {
 
 .TeamMember {
   width: 300px;
+  cursor: pointer;
 }
 
 .TeamMemberName {
