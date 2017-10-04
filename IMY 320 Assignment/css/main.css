@@ -58,7 +58,7 @@ h1 {
 
 .NavItem {
   width: 10%;
-  padding: 5px;
+  margin-left: 20px;
   padding-top: 6px;
   cursor: pointer;
   -webkit-transition: font-size 1s, padding-top 1s;
@@ -67,7 +67,7 @@ h1 {
 
 .NavItem:hover {
   font-size: 36px;
-  padding: 0;
+  /*padding: 0;*/
   /*padding-top: 0;*/
 }
 
@@ -166,11 +166,13 @@ h1 {
   visibility: hidden;
 }
 
-.TeamMember {}
+.TeamMember {
+  width: 300px;
+}
 
 .TeamMemberName {
   font-weight: bold;
-  font-size: 20px;
+  font-size: 36px;
 }
 
 /*Transition block*/
