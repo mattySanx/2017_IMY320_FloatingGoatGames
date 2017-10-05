@@ -113,13 +113,19 @@ $(function() {
   });
 
   $("#dave").hover(function() {
-    $(this).text(function(i, origText) {
-      return "<" + origText + ">";
-    });
+    $("body").css('background-image', 'url(../images/dave.jpg)');
+    if(!dSelect) {
+      $(this).text(function(i, origText) {
+        return "<" + origText + ">";
+      });
+    }
   }, function() {
-    $(this).text(function(i, origText) {
-      return origText.substring(1, origText.length - 1);
-    });
+    if(!dSelect) {
+      $("body").css('background-image', 'url(../images/koreanCOld.jpg)');
+      $(this).text(function(i, origText) {
+        return origText.substring(1, origText.length - 1);
+      });
+    }
   });
 
   $("#anneta").click(function() {
@@ -138,6 +144,38 @@ $(function() {
     triggerBack();
   });
 
+  $("#rish").click(function() {
+    $("body").css('background-image', 'url(../images/rish.jpg)');
+    mSelect = false;
+    dSelect = false;
+    rSelect = true;
+    aSelect = false;
+    $(this).text(function(i, origText) {
+      return origText.substring(1, origText.length - 1);
+    });
+    $("#anneta").animate({"left": "-=500"}, 500);
+    $("#matthew").delay(250).animate({"left": "-=500"}, 500);
+    $("#dave").delay(500).animate({"left": "-=500"}, 500);
+    $(this).next().delay(750).fadeIn("slow");
+    triggerBack();
+  });
+
+  $("#dave").click(function() {
+    $("body").css('background-image', 'url(../images/dave.jpg)');
+    mSelect = false;
+    dSelect = true;
+    rSelect = false;
+    aSelect = false;
+    $(this).text(function(i, origText) {
+      return origText.substring(1, origText.length - 1);
+    });
+    $("#anneta").animate({"left": "-=500"}, 500);
+    $("#matthew").delay(250).animate({"left": "-=500"}, 500);
+    $("#rish").delay(500).animate({"left": "-=500"}, 500);
+    $(this).next().delay(750).fadeIn("slow");
+    triggerBack();
+  });
+
   $("#hBack").click(function() {
     $("body").css('background-image', 'url(../images/koreanCOld.jpg)');
     if(aSelect) {
@@ -147,6 +185,24 @@ $(function() {
       $("#anneta").next().fadeOut("slow");
       triggerBack();
       aSelect = false;
+    }
+
+    if(rSelect) {
+      $("#anneta").delay(1000).animate({"left": "+=500"}, 500);
+      $("#matthew").delay(750).animate({"left": "+=500"}, 500);
+      $("#dave").delay(500).animate({"left": "+=500"}, 500);
+      $("#rish").next().fadeOut("slow");
+      triggerBack();
+      rSelect = false;
+    }
+
+    if(dSelect) {
+      $("#anneta").delay(1000).animate({"left": "+=500"}, 500);
+      $("#matthew").delay(750).animate({"left": "+=500"}, 500);
+      $("#rish").delay(500).animate({"left": "+=500"}, 500);
+      $("#dave").next().fadeOut("slow");
+      triggerBack();
+      dSelect = false;
     }
   });
 
