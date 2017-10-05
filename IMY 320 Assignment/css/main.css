@@ -68,7 +68,7 @@ h1 {
 .NavItem:hover {
   font-size: 36px;
   /*padding: 0;*/
-  /*padding-top: 0;*/
+  padding-top: 0;
 }
 
 .egg {
@@ -177,6 +177,11 @@ h1 {
 .TeamMemberName {
   font-weight: bold;
   font-size: 36px;
+  position: relative;
+}
+
+#Team div.content {
+  display: none;
 }
 
 /*Transition block*/

@@ -1,46 +1,54 @@
-$(function(){
+$(function() {
 
   //********** page transitions ***********
-  $("#NavHome").click(function(){
+  $("#NavHome").click(function() {
     $("#transition-block").animate({
       height: "toggle"
-    }, 500, function(){
+    }, 500, function() {
       showHome();
-      $("#transition-block").animate({height: "toggle"}, 500);
+      $("#transition-block").animate({
+        height: "toggle"
+      }, 500);
     });
   });
 
-  $("#NavAbout").click(function(){
+  $("#NavAbout").click(function() {
     $("#transition-block").animate({
       height: "toggle"
-    }, 500, function(){
+    }, 500, function() {
       showAbout();
-      $("#transition-block").animate({height: "toggle"}, 500);
+      $("#transition-block").animate({
+        height: "toggle"
+      }, 500);
     });
   });
 
-  $("#NavGallery").click(function(){
+  $("#NavGallery").click(function() {
     $("#transition-block").animate({
       height: "toggle"
-    }, 500, function(){
+    }, 500, function() {
       showGallery();
-      $("#transition-block").animate({height: "toggle"}, 500);
+      $("#transition-block").animate({
+        height: "toggle"
+      }, 500);
     });
   });
 
-  $("#NavTeam").click(function(){
+  $("#NavTeam").click(function() {
     $("#transition-block").animate({
       height: "toggle"
-    }, 500, function(){
+    }, 500, function() {
       showTeam();
-      $("#transition-block").animate({height: "toggle"}, 500);
+      $("#transition-block").animate({
+        height: "toggle"
+      }, 500);
     });
   });
 
   //************** easter eggs ****************
-  $(".egg").mouseenter(function(){
+  $(".egg").mouseenter(function() {
     $("body").css('background-image', 'url(../images/missile2.jpg)');
-  }).mouseleave(function(){
+  }).mouseleave(function() {
     $("body").css('background-image', 'url(../images/missile.jpg)');
   });
 
@@ -48,60 +56,75 @@ $(function(){
   //render2();
 
   arrayFonts = ["\'serif\'", "\'san-serif\'", "\'256_bytesregular\'"];
-  setInterval (function () {
+  setInterval(function() {
     console.log("change font");
-    $(".egg>span").each(function(){
-        //console.log("render2");
-        $(this).css('font-family', arrayFonts[Math.floor(Math.random() * (3 - 0 + 1)) + 0]);
-      });
-    }, 500);
+    $(".egg>span").each(function() {
+      //console.log("render2");
+      $(this).css('font-family', arrayFonts[Math.floor(Math.random() * (3 - 0 + 1)) + 0]);
+    });
+  }, 500);
 
-    //***************** team page *********************
-    $("#anneta").hover(function(){
-      $("body").css('background-image', 'url(../images/imy320pic1.jpg)');
-      $(this).text(function(i, origText){
-        return "<" + origText + ">";
-        });
-    }, function(){
+  //***************** team page *********************
+  aSelect = false;
+  mSelect = false;
+  rSelect = false;
+  dSelect = false;
+
+  $("#anneta").hover(function() {
+    $("body").css('background-image', 'url(../images/imy320pic1.jpg)');
+    $(this).text(function(i, origText) {
+      return "<" + origText + ">";
+    });
+  }, function() {
+    if(!aSelect) {
       $("body").css('background-image', 'url(../images/koreanCOld.jpg)');
-      $(this).text(function(i, origText){
-        return origText.substring(1, origText.length-1);
-      });
+    }
+    $(this).text(function(i, origText) {
+      return origText.substring(1, origText.length - 1);
     });
+  });
 
-    $("#matthew").hover(function(){
-      $(this).text(function(i, origText){
-        return "<" + origText + ">";
-        });
-    }, function(){
-      $(this).text(function(i, origText){
-        return origText.substring(1, origText.length-1);
-      });
+  $("#matthew").hover(function() {
+    $(this).text(function(i, origText) {
+      return "<" + origText + ">";
     });
+  }, function() {
+    $(this).text(function(i, origText) {
+      return origText.substring(1, origText.length - 1);
+    });
+  });
 
-    $("#rish").hover(function(){
-      $(this).text(function(i, origText){
-        return "<" + origText + ">";
-        });
-    }, function(){
-      $(this).text(function(i, origText){
-        return origText.substring(1, origText.length-1);
-      });
+  $("#rish").hover(function() {
+    $(this).text(function(i, origText) {
+      return "<" + origText + ">";
     });
+  }, function() {
+    $(this).text(function(i, origText) {
+      return origText.substring(1, origText.length - 1);
+    });
+  });
 
-    $("#dave").hover(function(){
-      $(this).text(function(i, origText){
-        return "<" + origText + ">";
-        });
-    }, function(){
-      $(this).text(function(i, origText){
-        return origText.substring(1, origText.length-1);
-      });
+  $("#dave").hover(function() {
+    $(this).text(function(i, origText) {
+      return "<" + origText + ">";
     });
+  }, function() {
+    $(this).text(function(i, origText) {
+      return origText.substring(1, origText.length - 1);
+    });
+  });
 
-    $("#anneta").click(function(){
-          $("body").css('background-image', 'url(../images/imy320pic1.jpg)');
-    });
+  $("#anneta").click(function() {
+    $("body").css('background-image', 'url(../images/imy320pic1.jpg)');
+    mSelect = false;
+    dSelect = false;
+    rSelect = false;
+    aSelect = true;
+    $("#matthew").animate({"left": "-=500"}, 500);
+    $("#rish").delay(250).animate({"left": "-=500"}, 500);
+    $("#dave").delay(500).animate({"left": "-=500"}, 500);
+    $(this).next().delay(750).fadeIn("slow");
+  });
 });
 
 //var arrayFonts = ["serif", "san-serif", "256_bytesregular"];
