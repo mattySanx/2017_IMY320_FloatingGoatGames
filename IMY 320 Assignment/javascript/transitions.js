@@ -97,13 +97,19 @@ $(function() {
   });
 
   $("#rish").hover(function() {
-    $(this).text(function(i, origText) {
-      return "<" + origText + ">";
-    });
+    $("body").css('background-image', 'url(../images/rish.jpg)');
+    if(!rSelect) {
+      $(this).text(function(i, origText) {
+        return "<" + origText + ">";
+      });
+    }
   }, function() {
-    $(this).text(function(i, origText) {
-      return origText.substring(1, origText.length - 1);
-    });
+    if(!rSelect) {
+      $("body").css('background-image', 'url(../images/koreanCOld.jpg)');
+      $(this).text(function(i, origText) {
+        return origText.substring(1, origText.length - 1);
+      });
+    }
   });
 
   $("#dave").hover(function() {
@@ -135,9 +141,9 @@ $(function() {
   $("#hBack").click(function() {
     $("body").css('background-image', 'url(../images/koreanCOld.jpg)');
     if(aSelect) {
-      $("#matthew").delay(750).animate({"left": "+=500"}, 500);
-      $("#rish").delay(500).animate({"left": "+=500"}, 500);
-      $("#dave").delay(250).animate({"left": "+=500"}, 500);
+      $("#matthew").delay(1000).animate({"left": "+=500"}, 500);
+      $("#rish").delay(750).animate({"left": "+=500"}, 500);
+      $("#dave").delay(500).animate({"left": "+=500"}, 500);
       $("#anneta").next().fadeOut("slow");
       triggerBack();
       aSelect = false;
