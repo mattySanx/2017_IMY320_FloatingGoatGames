@@ -51,10 +51,16 @@ $(function() {
   });
 
   //************** easter eggs ****************
-  $(".egg").mouseenter(function() {
+  $("#eggOne").mouseenter(function() {
     $("body").css('background-image', 'url(../images/missile2.jpg)');
   }).mouseleave(function() {
     $("body").css('background-image', 'url(../images/missile.jpg)');
+  });
+
+  $("#eggTwo").mouseenter(function() {
+    $("body").css('background-image', 'url(images/smallBoy2.jpg)');
+  }).mouseleave(function() {
+    $("body").css('background-image', 'url(images/smallBoy.jpg)');
   });
 
   $(".egg").lettering();
@@ -62,9 +68,7 @@ $(function() {
 
   arrayFonts = ["\'serif\'", "\'san-serif\'", "\'256_bytesregular\'"];
   setInterval(function() {
-    console.log("change font");
     $(".egg>span").each(function() {
-      //console.log("render2");
       $(this).css('font-family', arrayFonts[Math.floor(Math.random() * (3 - 0 + 1)) + 0]);
     });
   }, 500);
@@ -90,7 +94,7 @@ $(function() {
       });
     }
   });
-
+// TODO: Matthews page
   $("#matthew").hover(function() {
     $(this).text(function(i, origText) {
       return "<" + origText + ">";
