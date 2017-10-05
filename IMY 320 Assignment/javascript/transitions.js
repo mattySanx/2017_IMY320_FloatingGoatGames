@@ -1,4 +1,9 @@
 $(function() {
+  //********** start up *******************
+  setTimeout(function(){
+        $("#transition-block").animate({height: "toggle"}, "slow");
+        $("#transition-block>img").animate({height: "toggle"}, "fast");
+    }, 5000);
 
   //********** page transitions ***********
   $("#NavHome").click(function() {
