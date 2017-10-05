@@ -72,16 +72,18 @@ $(function() {
 
   $("#anneta").hover(function() {
     $("body").css('background-image', 'url(../images/imy320pic1.jpg)');
-    $(this).text(function(i, origText) {
-      return "<" + origText + ">";
-    });
+    if(!aSelect) {
+      $(this).text(function(i, origText) {
+        return "<" + origText + ">";
+      });
+    }
   }, function() {
     if(!aSelect) {
       $("body").css('background-image', 'url(../images/koreanCOld.jpg)');
+      $(this).text(function(i, origText) {
+        return origText.substring(1, origText.length - 1);
+      });
     }
-    $(this).text(function(i, origText) {
-      return origText.substring(1, origText.length - 1);
-    });
   });
 
   $("#matthew").hover(function() {
@@ -120,33 +122,36 @@ $(function() {
     dSelect = false;
     rSelect = false;
     aSelect = true;
+    $(this).text(function(i, origText) {
+      return origText.substring(1, origText.length - 1);
+    });
     $("#matthew").animate({"left": "-=500"}, 500);
     $("#rish").delay(250).animate({"left": "-=500"}, 500);
     $("#dave").delay(500).animate({"left": "-=500"}, 500);
     $(this).next().delay(750).fadeIn("slow");
+    triggerBack();
   });
+
+  $("#hBack").click(function() {
+    $("body").css('background-image', 'url(../images/koreanCOld.jpg)');
+    if(aSelect) {
+      $("#matthew").delay(750).animate({"left": "+=500"}, 500);
+      $("#rish").delay(500).animate({"left": "+=500"}, 500);
+      $("#dave").delay(250).animate({"left": "+=500"}, 500);
+      $("#anneta").next().fadeOut("slow");
+      triggerBack();
+      aSelect = false;
+    }
+  });
+
 });
 
-//var arrayFonts = ["serif", "san-serif", "256_bytesregular"];
-
-// TODO: fix this
-// function render2() {
-//   $(".egg>span").each(function(){
-//     console.log("render2");
-//     $(this).css('font-family', arrayFonts[Math.floor(Math.random() * (3 - 0 + 1)) + 0]);
-//   });
-//   t = setTimeout(function(){ render2() }, 500);
-// }
+function triggerBack(){
+  $("#hTeam").slideToggle(250);
+  $("#hBack").delay(250).slideToggle();
+}
 
 var unselectedColor = '#848484';
-// var home = document.getElementById('Home');
-// var homeNav = document.getElementById('NavHome');
-// var gallery = document.getElementById('Gallery');
-// var galleryNav = document.getElementById('NavGallery');
-// var about = document.getElementById('About');
-// var aboutNav = document.getElementById('NavAbout');
-// var team = document.getElementById('Team');
-// var teamNav = document.getElementById('NavTeam');
 
 function showTeam() {
   document.body.style.backgroundImage = "url('images/koreanCOld.jpg')";
