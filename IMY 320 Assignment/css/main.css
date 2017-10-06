@@ -189,6 +189,11 @@ h3 {
   display: none;
 }
 
+#Team div.content img {
+  width: 25%;
+  padding: 10px;
+}
+
 /*Transition block*/
 #transition-block {
   background-color: black;

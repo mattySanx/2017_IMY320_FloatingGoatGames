@@ -96,13 +96,19 @@ $(function() {
   });
 // TODO: Matthews page
   $("#matthew").hover(function() {
-    $(this).text(function(i, origText) {
-      return "<" + origText + ">";
-    });
+    $("body").css('background-image', 'url(../images/matt.jpg)');
+    if(!mSelect) {
+      $(this).text(function(i, origText) {
+        return "<" + origText + ">";
+      });
+    }
   }, function() {
-    $(this).text(function(i, origText) {
-      return origText.substring(1, origText.length - 1);
-    });
+    if(!mSelect) {
+      $("body").css('background-image', 'url(../images/koreanCOld.jpg)');
+      $(this).text(function(i, origText) {
+        return origText.substring(1, origText.length - 1);
+      });
+    }
   });
 
   $("#rish").hover(function() {
@@ -139,6 +145,7 @@ $(function() {
 
   $("#anneta").click(function() {
     $("body").css('background-image', 'url(../images/imy320pic1.jpg)');
+    $(this).css('cursor', 'auto');
     mSelect = false;
     dSelect = false;
     rSelect = false;
@@ -153,8 +160,26 @@ $(function() {
     triggerBack();
   });
 
+  $("#matthew").click(function() {
+    $("body").css('background-image', 'url(../images/matt.jpg)');
+    $(this).css('cursor', 'auto');
+    mSelect = true;
+    dSelect = false;
+    rSelect = false;
+    aSelect = false;
+    $(this).text(function(i, origText) {
+      return origText.substring(1, origText.length - 1);
+    });
+    $("#anneta").animate({"left": "-=500"}, 500);
+    $("#rish").delay(250).animate({"left": "-=500"}, 500);
+    $("#dave").delay(500).animate({"left": "-=500"}, 500);
+    $(this).next().delay(750).fadeIn("slow");
+    triggerBack();
+  });
+
   $("#rish").click(function() {
     $("body").css('background-image', 'url(../images/rish.jpg)');
+    $(this).css('cursor', 'auto');
     mSelect = false;
     dSelect = false;
     rSelect = true;
@@ -171,6 +196,7 @@ $(function() {
 
   $("#dave").click(function() {
     $("body").css('background-image', 'url(../images/dave.jpg)');
+    $(this).css('cursor', 'auto');
     mSelect = false;
     dSelect = true;
     rSelect = false;
@@ -188,6 +214,7 @@ $(function() {
   $("#hBack").click(function() {
     $("body").css('background-image', 'url(../images/koreanCOld.jpg)');
     if(aSelect) {
+      $("#anneta").css('cursor', 'pointer');
       $("#matthew").delay(1000).animate({"left": "+=500"}, 500);
       $("#rish").delay(750).animate({"left": "+=500"}, 500);
       $("#dave").delay(500).animate({"left": "+=500"}, 500);
@@ -196,7 +223,18 @@ $(function() {
       aSelect = false;
     }
 
+    if(mSelect) {
+      $("#matthew").css('cursor', 'pointer');
+      $("#anneta").delay(1000).animate({"left": "+=500"}, 500);
+      $("#rish").delay(750).animate({"left": "+=500"}, 500);
+      $("#dave").delay(500).animate({"left": "+=500"}, 500);
+      $("#matthew").next().fadeOut("slow");
+      triggerBack();
+      mSelect = false;
+    }
+
     if(rSelect) {
+      $("#rish").css('cursor', 'pointer');
       $("#anneta").delay(1000).animate({"left": "+=500"}, 500);
       $("#matthew").delay(750).animate({"left": "+=500"}, 500);
       $("#dave").delay(500).animate({"left": "+=500"}, 500);
@@ -206,6 +244,7 @@ $(function() {
     }
 
     if(dSelect) {
+      $("#dave").css('cursor', 'pointer');
       $("#anneta").delay(1000).animate({"left": "+=500"}, 500);
       $("#matthew").delay(750).animate({"left": "+=500"}, 500);
       $("#rish").delay(500).animate({"left": "+=500"}, 500);
