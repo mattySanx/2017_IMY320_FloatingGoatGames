@@ -79,69 +79,11 @@ $(function() {
   rSelect = false;
   dSelect = false;
 
-  $("#anneta").hover(function() {
-    $("body").css('background-image', 'url(../images/imy320pic1.jpg)');
-    if(!aSelect) {
-      $(this).text(function(i, origText) {
-        return "<" + origText + ">";
-      });
-    }
-  }, function() {
-    if(!aSelect) {
-      $("body").css('background-image', 'url(../images/koreanCOld.jpg)');
-      $(this).text(function(i, origText) {
-        return origText.substring(1, origText.length - 1);
-      });
-    }
-  });
-// TODO: Matthews page
-  $("#matthew").hover(function() {
-    $("body").css('background-image', 'url(../images/matt.jpg)');
-    if(!mSelect) {
-      $(this).text(function(i, origText) {
-        return "<" + origText + ">";
-      });
-    }
-  }, function() {
-    if(!mSelect) {
-      $("body").css('background-image', 'url(../images/koreanCOld.jpg)');
-      $(this).text(function(i, origText) {
-        return origText.substring(1, origText.length - 1);
-      });
-    }
-  });
-
-  $("#rish").hover(function() {
-    $("body").css('background-image', 'url(../images/rish.jpg)');
-    if(!rSelect) {
-      $(this).text(function(i, origText) {
-        return "<" + origText + ">";
-      });
-    }
-  }, function() {
-    if(!rSelect) {
-      $("body").css('background-image', 'url(../images/koreanCOld.jpg)');
-      $(this).text(function(i, origText) {
-        return origText.substring(1, origText.length - 1);
-      });
-    }
-  });
-
-  $("#dave").hover(function() {
-    $("body").css('background-image', 'url(../images/dave.jpg)');
-    if(!dSelect) {
-      $(this).text(function(i, origText) {
-        return "<" + origText + ">";
-      });
-    }
-  }, function() {
-    if(!dSelect) {
-      $("body").css('background-image', 'url(../images/koreanCOld.jpg)');
-      $(this).text(function(i, origText) {
-        return origText.substring(1, origText.length - 1);
-      });
-    }
-  });
+  //binding
+  bindAnneta();
+  bindMatt();
+  bindRish();
+  bindDave();
 
   $("#anneta").click(function() {
     $("body").css('background-image', 'url(../images/imy320pic1.jpg)');
@@ -150,10 +92,16 @@ $(function() {
     dSelect = false;
     rSelect = false;
     aSelect = true;
+
+    $("#matthew").unbind('mouseenter mouseleave');
+    $("#rish").unbind('mouseenter mouseleave');
+    $("#dave").unbind('mouseenter mouseleave');
+
     $(this).text(function(i, origText) {
       return origText.substring(1, origText.length - 1);
     });
-    $("#matthew").animate({"left": "-=500"}, 500);
+    $(this).animate({}, 0, function(){ aSelect = true; });
+    $("#matthew").delay(10).animate({"left": "-=500"}, 500);
     $("#rish").delay(250).animate({"left": "-=500"}, 500);
     $("#dave").delay(500).animate({"left": "-=500"}, 500);
     $(this).next().delay(750).fadeIn("slow");
@@ -167,6 +115,11 @@ $(function() {
     dSelect = false;
     rSelect = false;
     aSelect = false;
+
+    $("#anneta").unbind('mouseenter mouseleave');
+    $("#rish").unbind('mouseenter mouseleave');
+    $("#dave").unbind('mouseenter mouseleave');
+
     $(this).text(function(i, origText) {
       return origText.substring(1, origText.length - 1);
     });
@@ -184,6 +137,11 @@ $(function() {
     dSelect = false;
     rSelect = true;
     aSelect = false;
+
+    $("#anneta").unbind('mouseenter mouseleave');
+    $("#matthew").unbind('mouseenter mouseleave');
+    $("#dave").unbind('mouseenter mouseleave');
+
     $(this).text(function(i, origText) {
       return origText.substring(1, origText.length - 1);
     });
@@ -201,6 +159,11 @@ $(function() {
     dSelect = true;
     rSelect = false;
     aSelect = false;
+
+    $("#anneta").unbind('mouseenter mouseleave');
+    $("#matthew").unbind('mouseenter mouseleave');
+    $("#rish").unbind('mouseenter mouseleave');
+
     $(this).text(function(i, origText) {
       return origText.substring(1, origText.length - 1);
     });
@@ -221,6 +184,9 @@ $(function() {
       $("#anneta").next().fadeOut("slow");
       triggerBack();
       aSelect = false;
+      bindMatt();
+      bindRish();
+      bindDave();
     }
 
     if(mSelect) {
@@ -231,6 +197,9 @@ $(function() {
       $("#matthew").next().fadeOut("slow");
       triggerBack();
       mSelect = false;
+      bindAnneta();
+      bindRish();
+      bindDave();
     }
 
     if(rSelect) {
@@ -241,6 +210,9 @@ $(function() {
       $("#rish").next().fadeOut("slow");
       triggerBack();
       rSelect = false;
+      bindAnneta();
+      bindMatt();
+      bindDave();
     }
 
     if(dSelect) {
@@ -251,6 +223,9 @@ $(function() {
       $("#dave").next().fadeOut("slow");
       triggerBack();
       dSelect = false;
+      bindAnneta();
+      bindMatt();
+      bindRish();
     }
   });
 
@@ -259,6 +234,78 @@ $(function() {
 function triggerBack(){
   $("#hTeam").slideToggle(250);
   $("#hBack").delay(250).slideToggle();
+}
+
+function bindAnneta() {
+  $("#anneta").hover(function() {
+    $("body").css('background-image', 'url(../images/imy320pic1.jpg)');
+    if(!aSelect && !mSelect && !rSelect && !dSelect) {
+      $(this).text(function(i, origText) {
+        return "<" + origText + ">";
+      });
+    }
+  }, function() {
+    if(!aSelect && !mSelect && !rSelect && !dSelect) {
+      $("body").css('background-image', 'url(../images/koreanCOld.jpg)');
+      $(this).text(function(i, origText) {
+        return origText.substring(1, origText.length - 1);
+      });
+    }
+  });
+}
+
+function bindMatt() {
+  $("#matthew").hover(function() {
+    $("body").css('background-image', 'url(../images/matt.jpg)');
+    if(!aSelect && !mSelect && !rSelect && !dSelect) {
+      $(this).text(function(i, origText) {
+        return "<" + origText + ">";
+      });
+    }
+  }, function() {
+    if(!aSelect && !mSelect && !rSelect && !dSelect) {
+      $("body").css('background-image', 'url(../images/koreanCOld.jpg)');
+      $(this).text(function(i, origText) {
+        return origText.substring(1, origText.length - 1);
+      });
+    }
+  });
+}
+
+function bindRish() {
+  $("#rish").hover(function() {
+    $("body").css('background-image', 'url(../images/rish.jpg)');
+    if(!aSelect && !mSelect && !rSelect && !dSelect) {
+      $(this).text(function(i, origText) {
+        return "<" + origText + ">";
+      });
+    }
+  }, function() {
+    if(!aSelect && !mSelect && !rSelect && !dSelect) {
+      $("body").css('background-image', 'url(../images/koreanCOld.jpg)');
+      $(this).text(function(i, origText) {
+        return origText.substring(1, origText.length - 1);
+      });
+    }
+  });
+}
+
+function bindDave() {
+  $("#dave").hover(function() {
+    $("body").css('background-image', 'url(../images/dave.jpg)');
+    if(!aSelect && !mSelect && !rSelect && !dSelect) {
+      $(this).text(function(i, origText) {
+        return "<" + origText + ">";
+      });
+    }
+  }, function() {
+    if(!aSelect && !mSelect && !rSelect && !dSelect) {
+      $("body").css('background-image', 'url(../images/koreanCOld.jpg)');
+      $(this).text(function(i, origText) {
+        return origText.substring(1, origText.length - 1);
+      });
+    }
+  });
 }
 
 var unselectedColor = '#848484';
