@@ -76,7 +76,7 @@ h3 {
   padding-top: 0;
 }
 
-.egg {
+.egg, .eggThree {
   cursor: pointer;
 }
 

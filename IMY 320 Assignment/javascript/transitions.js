@@ -63,13 +63,28 @@ $(function() {
     $("body").css('background-image', 'url(images/smallBoy.jpg)');
   });
 
+  $(".eggThree").mouseenter(function() {
+    $("body").css('background-image', 'url(images/fronPageBackgroundOne.jpg)');
+  }).mouseleave(function() {
+    $("body").css('background-image', 'url(images/fronPageBackground.jpg)');
+  });
+
   $(".egg").lettering();
+  $(".eggThree").lettering();
   //render2();
 
   arrayFonts = ["\'serif\'", "\'san-serif\'", "\'256_bytesregular\'"];
+  arrayFontsTitle = ["\'256_bytesregular\'", "\'velvendamegablack\'", "\'serif\'"];
+
   setInterval(function() {
     $(".egg>span").each(function() {
       $(this).css('font-family', arrayFonts[Math.floor(Math.random() * (3 - 0 + 1)) + 0]);
+    });
+  }, 500);
+
+  setInterval(function() {
+    $(".eggThree>span").each(function() {
+      $(this).css('font-family', arrayFontsTitle[Math.floor(Math.random() * (3 - 0 + 1)) + 0]);
     });
   }, 500);
 
